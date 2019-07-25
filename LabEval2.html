@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+	<style type="text/css">
+		h1{
+			color: red;
+		}
+	</style>
+	<script>
+	function valicheck()
+	{
+		var a=document.forms["myform"]["Age"];
+		var n=document.forms["myform"]["Nation"];
+		if(isNaN(a.value)==0)
+		{
+		if(a.value >= 18)
+		{
+        if(n.value=="Indian")
+		{
+	    window.alert("You are Eligible to Vote");
+		}
+		else
+		{
+	    window.alert("You are not Eligible");
+		}
+		}
+	    else
+	    {
+	    window.alert("You are less than 18");
+	    }
+	    }
+	    else
+	    {
+	    window.alert("Age should be Numeric");
+	    }
+	    return true;
+	}
+    </script>
+</head>
+<body>
+<center><h1>This is a form to check if you are Valid to vote.</h1></center>
+<center>
+<form name="myform" onsubmit="return valicheck()" method="get"><br>
+<h3>Enter Details:</h3><br>
+Enter Your Name: &nbsp <input type="text" name="Name" placeholder="Name" required><br><br><br>
+Enter Your Age: &nbsp &nbsp &nbsp<input type="text" name="Age" placeholder="Age" required><br><br><br>
+Your Nationality:  &nbsp &nbsp &nbsp<select name="Nation" required>
+	<option  disabled selected>Select</option>
+	<option value="Indian">Indian</option>
+	<option value="American">American</option>
+	<option value="Australian">Australian</option>
+	<option value="Canadian">Canadian</option>
+</select>
+<br><br><br>
+<center><input type="submit" name="submit" value="Submit"></center>
+</form>
+</center>
+</body>
+
+</html>
